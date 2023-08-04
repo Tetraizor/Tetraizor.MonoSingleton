@@ -1,0 +1,16 @@
+{
+  "name": "com.tetraizor.monosingleton",
+  "displayName": "Mono Singleton",
+  "version": "1.0.0",
+  "author": {
+    "name": "Umuthan Ozel",
+    "email": "ozelumuthan@gmail.com",
+    "url": "umuthanozel.com"
+  },
+  "description": "A custom singleton base class for Unity I use on all my projects.",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tetraizordev/com.tetraizor.monoSingleton.git"
+  }
+}
