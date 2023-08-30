@@ -5,9 +5,10 @@ namespace Tetraizor.MonoSingleton
 {
     public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
     {
-        private bool _isInitialized;
-        
-        private static T _instance;
+        protected bool _isInitialized;
+
+        protected static T _instance;
+
         public static T Instance
         {
             get
@@ -15,29 +16,19 @@ namespace Tetraizor.MonoSingleton
                 if (_instance == null)
                 {
                     _instance = FindObjectOfType<T>();
-
-                    if (_instance == null)
-                    {
-                        var newGameObject = new GameObject((string) typeof(T).Name);
-                        var newInstance = newGameObject.AddComponent<T>();
-
-                        _instance = newInstance;
-
-                        _instance.Init();
-                    }
                 }
-                
+
                 return _instance;
             }
         }
 
-        private void Awake()
+        protected void Awake()
         {
-            if(!_isInitialized)
+            if (!_isInitialized)
                 Init();
         }
 
-        protected virtual void Init()
+        protected internal virtual void Init()
         {
             _isInitialized = false;
         }
